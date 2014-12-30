@@ -1,4 +1,4 @@
-# AngularJS REST Client Demo
+# AngularJS simple REST Client with Bootstrap UI
 
 ### Used software
 
@@ -17,6 +17,9 @@ CSS library
 
 ## Getting started
 
+The following is required to run a server, so that the client can request
+(sample) data.
+
 ### Requirements
 
 * [node.js](http://nodejs.org/) is installed
@@ -30,7 +33,7 @@ npm install
 
 ### Run
 
-Run server :
+Run server
 ```sh
 node server.js
 ```
