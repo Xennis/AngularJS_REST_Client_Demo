@@ -1,0 +1,17 @@
+############
+## Local files
+############
+
+db.json
+
+############
+## Node.js
+############
+ 
+node_modules/
+
+############
+## NetBeans
+############
+ 
+nbproject/

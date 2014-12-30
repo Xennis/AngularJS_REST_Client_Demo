@@ -1,0 +1,19 @@
+<h2>Facility "{{item.name}}"</h2>
+
+<div class="alert alert-success" role="alert">{{successMessage}}</div>
+<div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+	
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Facility</h3>
+	</div>
+	<div class="panel-body">
+		<form ng-submit="post()">
+			<input-field type="text" model="item.name" label="Name"></input-field>
+			<input-field type="text" model="item.street" label="Street"></input-field>
+			<input-field type="number" model="item.street_number" label="Street number"></input-field>
+			<input-field type="number" model="item.post_code" label="Post code"></input-field>
+			<submit-button></submit-button>
+		</form>
+	</div>
+</div>

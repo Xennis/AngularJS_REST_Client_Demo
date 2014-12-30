@@ -1,0 +1,22 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Phone number</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="person in items">
+			<td>{{person.id}}</td>
+			<td>{{person.first_name}} {{person.last_name}}</td>
+			<td>{{person.phone_number}}</td>
+			<td>
+				<edit-button href="#/people/{{person.id}}"></edit-button>
+				<button type="button" class="btn btn-danger" ng-click="delete($index, person.id)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>	
+<add-button href="#/people/new" text="Add a person"></add-button>

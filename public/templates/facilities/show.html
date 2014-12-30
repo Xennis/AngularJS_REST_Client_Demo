@@ -1,0 +1,41 @@
+<h3>Filter</h3>
+<div class="container-fluid">
+	<div class="col-lg-4">
+		<div class="input-group">
+			<span class="input-group-addon">Filter:Any</span>
+			<input type="text" ng-model="search.$" class="form-control" placeholder="Search for a facility">
+		</div>
+	</div>		
+	<div class="col-lg-4">
+		<div class="input-group">
+			<span class="input-group-addon">Filter:Name</span>
+			<input type="text" ng-model="search.name" class="form-control" placeholder="Search for a facility name">
+		</div>
+  </div>
+</div>
+
+<h3>List</h3>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name</a></th>
+			<th><a href="" ng-click="predicate = 'street'; reverse=!reverse">Street</a></th>
+			<th><a href="" ng-click="predicate = 'post_code'; reverse=!reverse">Post code</a></th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="facility in items | filter:search | orderBy:predicate:reverse">
+			<td>{{facility.id}}</td>
+			<td>{{facility.name}}</td>
+			<td>{{facility.street}} {{facility.street_number}}</td>
+			<td>{{facility.post_code}}</td>
+			<td>
+				<edit-button href="#/facilities/{{facility.id}}"></edit-button>
+				<button type="button" class="btn btn-danger" ng-click="delete($index, facility.id)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<add-button href="#/facilities/new" text="Add a facility"></add-button>
